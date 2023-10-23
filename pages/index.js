@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import 'tachyons';
 
 import CardList from '../app/Presentation/components/CardList';
-import SearchBox from '../app/Presentation/components/SearchBox.js';
-import Scroll from '../app/Presentation/components/Scroll.js';
+import SearchBox from '../app/Presentation/components/SearchBox';
+import Scroll from '../app/Presentation/components/Scroll';
 
 
 export default function Home() {
