@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: robofriends-docker-pod
+  labels:
+    app: robofriends-docker
+spec:
+  containers:
+  - name: robofriends-docker
+    image: robofriends-docker:latest
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 3000
