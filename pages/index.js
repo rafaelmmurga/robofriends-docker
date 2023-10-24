@@ -6,7 +6,6 @@ import CardList from '../app/Presentation/components/CardList';
 import SearchBox from '../app/Presentation/components/SearchBox';
 import Scroll from '../app/Presentation/components/Scroll';
 
-
 export default function Home() {
 
   const [robots, setRobots] = useState([])
