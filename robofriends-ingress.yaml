@@ -2,16 +2,21 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: robofriends-ingress
+  annotations:
+    # Route all traffic to pod, but don't keep subpath (!)
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
     - host: k8s.nuup.ninja
       http:
         paths:
-          - path: /robofriends-user9
+          - path: /robofriends-user9(/.*|$)
             pathType: Prefix
             backend:
-              service:
-                name: robofriends-service
-                port:
-                  number: 80
+              serviceName: robofriends-service
+              servicePort: 80          
+          - path: /static/robofriends-user9(/.*|$)
+            backend:
+              serviceName: robofriends-service
+              servicePort: 80        
