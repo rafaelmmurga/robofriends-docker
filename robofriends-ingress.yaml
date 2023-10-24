@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: robofriends-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: k8s.nuup.ninja
+      http:
+        paths:
+          - path: /robofriends-user9
+            pathType: Prefix
+            backend:
+              service:
+                name: robofriends-service
+                port:
+                  number: 80

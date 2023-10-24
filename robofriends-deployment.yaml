@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: robofriends-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: robofriends
+  template:
+    metadata:
+      labels:
+        app: robofriends
+    spec:
+      containers:
+        - name: robofriends-container
+          image: rafaelmmurga/robofriends-user9:latest
+          ports:
+            - containerPort: 3000
+

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: robofriends-service
+spec:
+  selector:
+    app: robofriends
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
