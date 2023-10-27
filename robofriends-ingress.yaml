@@ -11,17 +11,10 @@ spec:
     - host: k8s.nuup.ninja
       http:
         paths:
-          - path: /robofriends-user9(/.*|$)
+          - path: /robofriends-user9
             pathType: Prefix
             backend:
               service:
                 name: robofriends-service
                 port:
-                  number: 80             
-          - path: /robofriends-user9/static(/.*|$)
-            pathType: Prefix
-            backend:
-              service:
-                name: robofriends-service
-                port:
-                  number: 80            
+                  number: 80      
